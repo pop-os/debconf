@@ -1,3 +1,16 @@
+debconf (1.5.9) unstable; urgency=low
+
+  [ Debconf Translations ]
+    - Updated Bosnian. Closes: #396654
+    - Updated Greek
+    - Updated Nepali.
+    - Updated Bulgarian. Closes: #397778
+
+  [ Programs Translations ]
+    - Added Bosnian. Closes: #397282
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 15 Nov 2006 18:35:19 -0500
+
 debconf (1.5.8) unstable; urgency=low
 
   * Fix passthrough frontend's handling of noninteractive elements.
