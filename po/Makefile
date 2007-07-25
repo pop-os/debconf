@@ -15,14 +15,11 @@ install: all
 	done
 
 debconf.pot: $(POTFILES)
-# xgettext can mostly handle perl files as C files, though it gets a bit
-# confused about single quotes in comments, and the gettext() calls have to
-# use double-quoted strings or it will ignore them.
 	@echo "Rebuilding the pot file"
 	xgettext $(POTFILES) -o debconf.pot -Lperl
 
 clean:
-	rm -f debconf.pot $(MOFILES) messages messages.mo
+	rm -f $(MOFILES) messages messages.mo
 
 %.mo: %.po
 	msgfmt -o $@ $<
@@ -30,9 +27,9 @@ clean:
 %.po: debconf.pot
 	@echo -n "Merging debconf.pot and $@"
 	@msgmerge $@ debconf.pot -o $@.new
-# Typically all that changes was a date. I'd prefer not to cvs commit such
-# changes, so detect and ignore them.
-	@if [ "`diff $@ $@.new | grep '[<>]' | wc -l`" -ne 2 ]; then \
+# Typically all that changes was a date or line number. I'd prefer not to
+# commit such changes, so detect and ignore them.
+	@if [ "`diff $@ $@.new | grep '[<>]' | grep -v '[<>] #:' | wc -l`" -ne 2 ]; then \
 		mv -f $@.new $@; \
 	else \
 		rm -f $@.new; \
