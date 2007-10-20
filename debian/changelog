@@ -1,3 +1,29 @@
+debconf (1.5.15) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Add manual page description for debconf-set-selections. Closes: #435954
+  * Ignore AttributeError in the Python DebconfCommunicator destructor, so
+    that you don't get a confusing exception message if you give the wrong
+    number of arguments to the constructor.
+  * Don't use dh_python's postinst fragment (and copy its prerm fragment by
+    hand). debconf is too important to fail because some random python
+    module wouldn't compile. Closes: #225384, #293820
+
+  [ Debconf Translations ]
+  * Nepali updated. Closes: #435388
+
+  [ Programs Translations ]
+  * Nepali added. Closes: #435389
+
+  [ Joey Hess ]
+  * Applied Davor Ocelic's patch adding a keybykey option to the LDAP
+    DbDriver. Closes: #440857
+    (Note that it currently has some minor uninitialised value warnings.)
+  * TERM isn't set if run from synaptic, avoid uninitialised value in Readline
+    frontend. Closes: #307568
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 19 Oct 2007 21:26:20 -0400
+
 debconf (1.5.14) unstable; urgency=low
 
   [ Colin Watson ]
