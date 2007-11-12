@@ -67,7 +67,9 @@ sub init {
 	$this->{readfh}->autoflush(1);
 	$this->{writefh}->autoflush(1);
 	
-	$this->SUPER::init(@_);
+	# Note: SUPER init is not called, since it does several things
+	# innappropriate for passthrough frontends, including clearing the capb.
+	$this->elements([]);
 	$this->interactive(1);
 	$this->need_tty(0);
 }
@@ -335,20 +337,20 @@ sub progress_start {
 sub progress_set {
 	my $this=shift;
 
-	return $this->talk('PROGRESS', 'SET', $_[0]);
+	return (scalar($this->talk('PROGRESS', 'SET', $_[0])) ne "30");
 }
 
 sub progress_step {
 	my $this=shift;
 
-	return $this->talk('PROGRESS', 'STEP', $_[0]);
+	return (scalar($this->talk('PROGRESS', 'STEP', $_[0])) ne "30");
 }
 
 sub progress_info {
 	my $this=shift;
 
 	$this->progress_data('INFO', $_[0]);
-	return $this->talk('PROGRESS', 'INFO', $_[0]->template->template);
+	return (scalar($this->talk('PROGRESS', 'INFO', $_[0]->template->template)) ne "30");
 }
 
 sub progress_stop {
