@@ -1,3 +1,11 @@
+debconf (1.5.20) unstable; urgency=low
+
+  * Use signal names rather than numbers in debconf-apt-progress.
+  * Fix use of 'next' rather than 'return' in debconf-apt-progress
+    handle_status.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 11 Mar 2008 14:38:28 +0000
+
 debconf (1.5.19) unstable; urgency=low
 
   * Add a hack to the teletype frontend to allow typing "q" at a "[More]"
