@@ -1,3 +1,27 @@
+debconf (1.5.23) unstable; urgency=low
+
+  [ Manpages Translations ]
+  * Russian updated. Closes: #482288
+  * French updated.
+  * German added. Closes: #486869
+
+  [ Debconf translations ]
+  * Macedonian. Closes: #485993
+  * Romanian. Closes: #488530
+  * Korean. Closes: #491515
+
+  [ Programs translations ]
+  * Catalan. Closes: #486714
+  * Romanian. Closes: #488530
+  * Korean. Closes: #491515
+
+  [ Joey Hess ]
+  * Typo. Closes: #486870
+  * Disable Russian man pages until the encoding issue affecting them can be
+    fixed.
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 22 Jul 2008 00:18:49 -0400
+
 debconf (1.5.22) unstable; urgency=low
 
   * Improve LDAP KeyByKey option by setting the LDAP search base to the exact
