@@ -1,3 +1,45 @@
+debconf (1.5.24) unstable; urgency=low
+
+  [ Joey Hess ]
+  * debconf(7): Clarify reason for libterm-readline-gnu-perl being recommended
+    for users of readline frontend. Closes: #497357
+
+  [ Manpages translations ]
+  * Updated german man page translation. Closes: #492370
+  * German proofread by  Helge Kreutzmann. Copyright fixed to include
+    Florian Rehnisch
+  * Corrected French manpages translation wrt "interactive".
+    Closes: #496555
+
+  [ Debconf translations ]
+  * Hindi updated.
+  * Greek updated. Closes: #498580
+
+  [ Programs translations ]
+  * Hindi updated.
+  * Greek updated. Closes: #498577
+
+  [ Joey Hess ]
+  * debconf.7: Remove whitespace in manrefs. Closes: #498446
+
+  [ Colin Watson ]
+  * Fall back to untranslated fields if asking explicitly for any
+    nonexistent translated field, not just Choices-C. For example, asking
+    for Choices-en.UTF-8 should fall back to Choices if Choices-en.UTF-8
+    doesn't exist. LP: #271652
+  * Remove some dead code in Debconf::Template::AUTOLOAD.
+  * Add an AUTHOR section to debconf-escape(1) to make the German po4a
+    translations work better.
+  * Add missing =back to debconf-apt-progress(1)'s OPTIONS section.
+  * Use =head1 in German POD addendum, not =HEAD1. Together with switching
+    output to UTF-8 (below), this fixes various problems with German manual
+    page output. Closes: #492368
+  * Recode all manual pages to UTF-8 and re-enable Russian manual page
+    generation, now that pod2man has a --utf8 option. Requires perl (>=
+    5.10.0-16) as bug #500210 broke the Russian pages. Closes: #485756
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 12 Oct 2008 18:07:17 +0100
+
 debconf (1.5.23) unstable; urgency=low
 
   [ Manpages Translations ]
