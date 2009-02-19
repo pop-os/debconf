@@ -1,3 +1,36 @@
+debconf (1.5.25) unstable; urgency=low
+
+  [ Joey Hess ]
+  * debconf-devel(7): Fix state machine example to handle case where user
+    backs out of first question.
+
+  [ Colin Watson ]
+  * Support overriding frontend's package name determination (used to set
+    the owner) using the DEBCONF_PACKAGE environment variable. Useful for
+    applications driving debconf other than by way of package installation.
+  * Refer to po-debconf(7) rather than its README (thanks, James R. Van
+    Zandt). Closes: #505392
+  * Refer to debconf-show(1) from dpkg-reconfigure(8) for those who just
+    want to see the current configuration. Closes: #506070
+  * Only use -C fields when explicitly disabling internationalisation within
+    debconf (or when DEBCONF_C_VALUES=true), not merely when in the C
+    locale. Based on a patch by Frans Pop, for which thanks! Closes: #476873
+  * Force fallback to the default template if we encounter 'en' in the
+    locale list and no language-specific template for English was
+    found,since English text is usually found in a plain field rather than
+    something like Choices-en.UTF-8. This allows you to override other
+    locale variables for a different language with LANGUAGE=en. Thanks again
+    to Frans Pop. Closes: #496631
+
+  [ Manpages translations ]
+  * Completed german man page translation.
+
+  [ Debconf translations ]
+  * Corrections in german translation with apologies for
+    forgetting this bug report. Closes: #462302
+
+ -- Colin Watson <cjwatson@debian.org>  Thu, 19 Feb 2009 00:04:02 +0000
+
 debconf (1.5.24) unstable; urgency=low
 
   [ Joey Hess ]
