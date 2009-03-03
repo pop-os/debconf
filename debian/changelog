@@ -1,3 +1,15 @@
+debconf (1.5.26) unstable; urgency=low
+
+  * Use 'key not in dict' rather than 'not dict.has_key(key)' in debconf.py;
+    dict.has_key is deprecated in Python 2.6.
+  * debconf-apt-progress: Don't send STOP if we didn't start the debconf
+    frontend ourselves; in that case the application calling us should
+    arrange to stop itself.
+  * debconf.py: Use subprocess rather than popen2 if it's available. popen2
+    is deprecated in Python 2.6.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 03 Mar 2009 16:33:57 +0000
+
 debconf (1.5.25) unstable; urgency=low
 
   [ Joey Hess ]
