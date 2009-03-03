@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-12 18:07+0100\n"
+"POT-Creation-Date: 2009-02-19 00:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -216,31 +216,31 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../Debconf/Template.pm:90
+#: ../Debconf/Template.pm:91
 #, perl-format
 msgid ""
 "warning: possible database corruption. Will attempt to repair by adding back "
 "missing question %s."
 msgstr ""
 
-#: ../Debconf/Template.pm:203
+#: ../Debconf/Template.pm:206
 #, perl-format
 msgid ""
 "Template #%s in %s has a duplicate field \"%s\" with new value \"%s\". "
 "Probably two templates are not properly separated by a lone newline.\n"
 msgstr ""
 
-#: ../Debconf/Template.pm:228
+#: ../Debconf/Template.pm:231
 #, perl-format
 msgid "Unknown template field '%s', in stanza #%s of %s\n"
 msgstr ""
 
-#: ../Debconf/Template.pm:254
+#: ../Debconf/Template.pm:257
 #, perl-format
 msgid "Template parse error near `%s', in stanza #%s of %s\n"
 msgstr ""
 
-#: ../Debconf/Template.pm:260
+#: ../Debconf/Template.pm:263
 #, perl-format
 msgid "Template #%s in %s does not contain a 'Template:' line\n"
 msgstr ""
@@ -288,7 +288,7 @@ msgstr ""
 msgid "%s failed to preconfigure, with exit status %s"
 msgstr ""
 
-#: ../dpkg-reconfigure:100
+#: ../dpkg-reconfigure:103
 msgid ""
 "Usage: dpkg-reconfigure [options] packages\n"
 "  -a,  --all\t\t\tReconfigure all packages.\n"
@@ -297,26 +297,26 @@ msgid ""
 "       --force\t\t\tForce reconfiguration of broken packages."
 msgstr ""
 
-#: ../dpkg-reconfigure:113
+#: ../dpkg-reconfigure:116
 #, perl-format
 msgid "%s must be run as root"
 msgstr ""
 
-#: ../dpkg-reconfigure:146
+#: ../dpkg-reconfigure:149
 msgid "please specify a package to reconfigure"
 msgstr ""
 
-#: ../dpkg-reconfigure:167
+#: ../dpkg-reconfigure:170
 #, perl-format
 msgid "%s is not installed"
 msgstr ""
 
-#: ../dpkg-reconfigure:171
+#: ../dpkg-reconfigure:174
 #, perl-format
 msgid "%s is broken or not fully installed"
 msgstr ""
 
-#: ../dpkg-reconfigure:250
+#: ../dpkg-reconfigure:253
 #, perl-format
 msgid "Cannot read status file: %s"
 msgstr ""
