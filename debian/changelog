@@ -1,3 +1,37 @@
+debconf (1.5.27) unstable; urgency=low
+
+  * Fix Plural-Forms header in Tagalog translation.
+  * debconf-apt-progress: If we didn't start the debconf frontend ourselves,
+    then it's unlikely that the passthrough child will be able to start
+    debconf normally, so tell it to use a pipe database in that case and
+    rely on passthrough to save answers (LP: #337306).
+  * debconf-apt-progress: DEBIAN_HAS_FRONTEND is always set here at some
+    point, even if only on the second run after starting debconf, so we need
+    to invert our handling of the check for whether we started the debconf
+    frontend ourselves (LP: #347648).
+  * Minor GET optimisation: fetch the question value only once rather than
+    twice.
+  * debconf-apt-progress: If we get cancelled very early on before managing
+    to start the process we're controlling, make sure that we don't carry on
+    and start it anyway, and that we still return 30.
+  * debconf-apt-progress: Handle cancellation right at the end. We don't
+    have a process to kill at this point, but we should at least return the
+    correct exit code.
+
+  [ Manpages translations ]
+  * Completed german man page translation. Closes: #518396
+  * Completed French man page translation. Closes: #520787
+
+  [ Debconf translations ]
+  * Added Asturian. Closes: #518977
+  * Added Bengali
+
+  [ Programs translations ]
+  * Added Asturian. Closes: #518977
+  * Added Bengali
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 03 Jul 2009 14:36:50 +0100
+
 debconf (1.5.26) unstable; urgency=low
 
   * Use 'key not in dict' rather than 'not dict.has_key(key)' in debconf.py;
