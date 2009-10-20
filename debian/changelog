@@ -1,3 +1,58 @@
+debconf (1.5.28) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Put debconf-i18n in Section: localization, to match overrides.
+  * Remove unused subcommand parameter from
+    Debconf::FrontEnd::Passthrough::progress_data().
+  * Override Lintian warning about debconf's postrm not calling db_purge;
+    debconf itself is a special case here.
+  * Declare "Media change" string as needing translation. (apt gives us
+    translated messages for substitution into the extended description here,
+    but not for the short description.)
+  * Remove unused 'use I18N::Langinfo' from Debconf::Element::Gnome
+    (LP: #387112).
+  * Upgrade to debhelper v7. In the process, convert to python-central with
+    DH_PYCENTRAL=nomove (since we need our modules to be usable even when
+    debconf is unconfigured; at the moment, the effect of this use of
+    python-central is only to add a Python-Versions control field).
+
+  [ Christian Perrier ]
+  * Add translation of "-a" in "man dpkg-reconfigure".
+    Patch by Simon Paillard.
+  * Suggest reporting bugs related to French translations in the French
+    l10n mailing list. Patch by Simon Paillard.
+  * French debconf translation update
+
+  [ Joey Hess ]
+  * document --terse in relevant man pages and show --no-reload in
+    dpkg-reconfigure usage. Closes: #548994
+  * German man page addendum fixed. Closes: #546789
+  * Dropped the KDE frontend. libqt-perl is uninstallable, and
+    work on the new qt4 perl bindings and a new KDE frontend based on
+    them is not ready. If the KDE frontend is specified, debconf will
+    now attempt to fall back to the Gnome frontend, or failing that,
+    to dialog. Closes: #522580
+  * Enable set -e in debconf-utils postinst.
+
+  [ Programs translation updates ]
+  * Portuguese (Miguel Figueiredo). Closes: #551379
+
+  [ Debconf translation updates ]
+  * Asturian (Marcos Alvarez Costales).
+  * Bulgarian (Damyan Ivanov).
+  * Finnish (Tapio Lehtonen).
+  * Czech (Miroslav Kure).
+  * Esperanto (Felipe Castro).
+  * Simplified Chinese (Carlos Z.F. Liu).
+  * Slovak (Ivan Masár).
+  * German (Holger Wansing).
+  * Bengali (Md. Rezwan Shahid).
+  * Basque (Piarres Beobide).
+  * Japanese (Kenshi Muto).
+  * Russian (Yuri Kozlov).
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 19 Oct 2009 20:14:23 -0400
+
 debconf (1.5.27) unstable; urgency=low
 
   * Fix Plural-Forms header in Tagalog translation.
