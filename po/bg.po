@@ -1,14 +1,14 @@
 # translation of bg.po to Bulgarian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the debconf package.
 #
-# Damyan Ivanov <dam@modsoftsys.com>, 2006, 2007.
+# Damyan Ivanov <dam@modsoftsys.com>, 2006, 2007, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: debconf\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-19 19:52-0400\n"
-"PO-Revision-Date: 2007-05-09 10:02+0300\n"
+"POT-Creation-Date: 2010-03-08 13:08+0000\n"
+"PO-Revision-Date: 2009-11-26 11:37+0200\n"
 "Last-Translator: Damyan Ivanov <dam@modsoftsys.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -179,7 +179,7 @@ msgid ""
 msgstr ""
 "Интерфейсът „dialog“ изисква терминалът да бъде поне 13 реда на 31 колони."
 
-#: ../Debconf/FrontEnd/Dialog.pm:280
+#: ../Debconf/FrontEnd/Dialog.pm:295
 msgid "Package configuration"
 msgstr "Настройка на пакет"
 
@@ -207,8 +207,7 @@ msgstr ""
 "си, запишете го и излезте ит редактора. Debconf ще прочете файла и ще "
 "приложи указаните промени."
 
-#: ../Debconf/FrontEnd/Gnome.pm:97 ../Debconf/FrontEnd/Kde.pm:85
-#: ../Debconf/FrontEnd/Kde.pm:96
+#: ../Debconf/FrontEnd/Gnome.pm:97
 #, perl-format
 msgid "Debconf on %s"
 msgstr "Debconf на %s"
@@ -327,9 +326,11 @@ msgstr ""
 "Употреба: dpkg-reconfigure [параметри] пакети\n"
 "  -a,  --all\t\t\tПренастройване на всички пакети.\n"
 "  -u,  --unseen-only\t\tПоказване само на незададените въпроси.\n"
-"       --default-priority\tУзползване на приоритет по подразбиране вместо "
-"„нисък“.\n"
-"       --force\t\t\tПренастройване на пакети с проблем в инсталацията."
+"       --default-priority\tИзползване на приоритет по подразбиране вместо "
+"„low“ (нисък).\n"
+"       --force\t\t\tПренастройване на пакети с проблем в инсталацията.\n"
+"       --no-reload\t\tБез презареждане на шаблоните. (Да се използва "
+"предпазливо)"
 
 #: ../dpkg-reconfigure:117
 #, perl-format

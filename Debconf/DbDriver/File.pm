@@ -9,7 +9,7 @@ Debconf::DbDriver::File - store database in flat file
 package Debconf::DbDriver::File;
 use strict;
 use Debconf::Log qw(:all);
-use POSIX;
+use POSIX ();
 use Fcntl qw(:DEFAULT :flock);
 use IO::Handle;
 use base 'Debconf::DbDriver::Cache';
@@ -92,7 +92,9 @@ sub init {
 		close $fh;
 	}
 
-	if (! open ($this->{_fh}, $this->{filename})) {
+	# Open file for read but also with write access so below exclusive
+	# lock can be done portably.
+	if (! open ($this->{_fh}, "+<", $this->{filename})) {
 		$this->error("could not open $this->{filename}: $!");
 		return; # always abort, even if not throwing fatal error
 	}
@@ -179,7 +181,7 @@ sub shutdown {
 		$this->error("rename failed: $!");
 
 	# Now drop the lock on -old (the lock on -new will be removed
-	# when this function returns and $fh goes out of scope.
+	# when this function returns and $fh goes out of scope).
 	delete $this->{_fh};
 
 	return 1;
