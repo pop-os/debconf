@@ -1,15 +1,15 @@
 # Portuguese translation of Debconf for the Debian Installer
 # Copyright (C) 2004 Miguel Figueiredo <elmig@debianpt.org>
 # This file is distributed under the same license as the debconf package.
-# Miguel Figueiredo <elmig@debianpt.org>, 2004-2006.
+# Miguel Figueiredo <elmig@debianpt.org>, 2004-2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debconf\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-13 22:23+0200\n"
-"PO-Revision-Date: 2006-10-10 23:19+0000\n"
-"Last-Translator: Miguel Figueiredo <elmig@debianpt.org>\n"
+"POT-Creation-Date: 2010-03-08 13:08+0000\n"
+"PO-Revision-Date: 2010-02-11 21:12+0000\n"
+"Last-Translator: YOUR NAME <E-MAIL@ADDRESS>\n"
 "Language-Team: Portuguese <traduz@debianpt.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -97,8 +97,8 @@ msgstr "não"
 msgid ""
 "(Enter zero or more items separated by a comma followed by a space (', ').)"
 msgstr ""
-"(Introduza zero ou mais items separados por uma vírgula seguida de um espaço "
-"(', ').)"
+"(Introduza os itens que deseja escolher separados por uma vírgula seguida de "
+"um espaço (', ').)"
 
 #: ../Debconf/Element/Gnome.pm:182
 msgid "_Help"
@@ -173,7 +173,7 @@ msgid ""
 "No usable dialog-like program is installed, so the dialog based frontend "
 "cannot be used."
 msgstr ""
-"Não está instalado nenhum programa utilizável do tipo dialog, por isso o o "
+"Não está instalado nenhum programa utilizável do tipo dialog, por isso o "
 "frontend baseado em dialog não pode ser utilizado."
 
 #: ../Debconf/FrontEnd/Dialog.pm:111
@@ -183,7 +183,7 @@ msgstr ""
 "O frontend Dialog requer um ecrã de pelo menos 13 linhas de altura e 31 "
 "colunas de largura."
 
-#: ../Debconf/FrontEnd/Dialog.pm:280
+#: ../Debconf/FrontEnd/Dialog.pm:295
 msgid "Package configuration"
 msgstr "Configuração de pacotes"
 
@@ -208,12 +208,11 @@ msgstr ""
 "texto para editar. Este é um desses ficheiros de texto. Se está "
 "familiarizado com os ficheiros de configuração standard de unix, este "
 "ficheiro vai-lhe parecer familiar -- contém comentários intercalados com "
-"items de configuração. Edite o ficheiro, modificando qualquer item que ache "
+"itens de configuração. Edite o ficheiro, modificando qualquer item que ache "
 "necessário, depois grave-o e saia. Nesse ponto, o debconf irá ler o ficheiro "
 "editado, e utilizar os valores que introduziu para configurar o sistema."
 
-#: ../Debconf/FrontEnd/Gnome.pm:97 ../Debconf/FrontEnd/Kde.pm:85
-#: ../Debconf/FrontEnd/Kde.pm:96
+#: ../Debconf/FrontEnd/Gnome.pm:97
 #, perl-format
 msgid "Debconf on %s"
 msgstr "Debconf em %s"
@@ -334,8 +333,8 @@ msgid ""
 msgstr ""
 "Utilização: dpkg-reconfigure [opções] pacotes\n"
 "  -a,  --all\t\t\tReconfigurar todos os pacotes.\n"
-"  -u,  --unseen-only\t\tMostrar apenas questões ainda não vistas.\n"
-"       --default-priority\tUtilizar a prioridade por omissão em vez de "
+"  -u,  --unseen-only\t\tMostrar apenas as questões ainda não vistas.\n"
+"       --default-priority\tUtilizar a prioridade predefinida em vez de "
 "baixa.\n"
 "       --force\t\t\tForçar a reconfiguração de pacotes com problemas."
 
@@ -420,11 +419,11 @@ msgstr "%s está ultrapassado"
 msgid "%s is outdated; dropping whole template!"
 msgstr "%s está ultrapassado; deixando todo o template!"
 
-#: ../debconf:91
+#: ../debconf:95
 msgid "Usage: debconf [options] command [args]"
 msgstr "Utilização: debconf [opções] comando [args]"
 
-#: ../debconf:93
+#: ../debconf:97
 msgid ""
 "\n"
 "  -o,  --owner=package\t\tSet the package that owns the command."

@@ -1,3 +1,61 @@
+debconf (1.5.29) unstable; urgency=low
+
+  [ Programs translation update ]
+  * Bulgarian (Damyan Ivanov). Closes: #558085
+  * German (Helge Kreutzmann)
+  * Portuguese (Miguel Figueiredo). Closes: #569254
+  * Hebrew (Lior Kaplan).
+  * Japanese (Kenshi Muto). Closes: #573057
+  * Finnish (Tommi Vainikainen). Closes: #573053
+  * Vietnamese (Clytie Siddall). Closes: #573122
+  * Polish (Marcin Owsiany). Closes: #573124
+  * Russian (Yuri Kozlov). Closes: #573195
+  * Czech (Miroslav Kure). Closes: #573984
+  * Asturian (Marcos).
+  * Dutch (Frans Pop).
+  * Swedish (Daniel Nylander).
+  * Khmer (Khoem Sokhem).
+  * Bengali (Md. Rezwan Shahid).
+  * Indonesian (Parlin Imanuel).
+  * Catalan (Guillem Jover).
+  * Esperanto (Felipe Castro).
+  * Traditional Chinese (Kan-Ru Chen).
+
+  [ Manpage translation updates ]
+  * French (Florentin Duneau). Closes: #573867
+  * German (Helge Kreutzmann)
+  * Russian (Yuri Kozlov). Closes: #556275, #573202
+
+  [ Debconf translations ]
+  * Bengali (Sadia Afroz).
+  * Italian (Milo Casagrande). Closes: #559500
+  * Norwegian Bokmål (Hans Fredrik Nordhaug).  Closes: #558659
+  * Swedish (Martin Bagge).  Closes: #551945
+  * Simplified Chinese (苏运强).
+  * Thai (Theppitak Karoonboonyanan).  Closes: #568368
+  * Vietnamese (Clytie Siddall).  Closes: #568976
+  * Gujarati (Kartik Mistry).  Closes: #571680
+  * Slovenian (Vanja Cvelbar).  Closes: #570345
+
+  [ Joey Hess ]
+  * debconf-devel(7): Note why SETTITLE is generally used rather than TITLE.
+    Closes: #560323 (Thanks, Frans Pop)
+  * DbDriver::File: Open file read-write so exclusive flock locking can be
+    done portably. Fixes issue on Solaris. (Thanks, James Lee)
+    Closes: #563577
+  * Prevent dialog from escaping "\n" to a liternal newline in the text
+    it displays by doing some tricky things with UTF-8 zero-width characters.
+    Closes: #566954 (Thanks, Ben Hutchings)
+
+  [ Colin Watson ]
+  * Build for Python 2.6. Closes: #574759
+
+  [ Joey Hess ]
+  * Clean up use of POSIX perl module, which exports a large amount
+    of stuff by default. Closes: #574573
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 21 Mar 2010 20:51:30 +0000
+
 debconf (1.5.28) unstable; urgency=low
 
   [ Colin Watson ]
