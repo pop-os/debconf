@@ -1,3 +1,27 @@
+debconf (1.5.32) unstable; urgency=low
+
+  * File: Avoid using filetest to test if database can be written to, as that
+    is not in perl-base. Instead, try to open database for read+write,
+    and if it fails, open readonly without locking. Closes: #577632
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 13 Apr 2010 13:53:46 -0400
+
+debconf (1.5.31) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Squash chomp warning in Debconf::FrontEnd::Teletype on EOF or error.
+  * Test database writability more carefully to avoid breaking use of
+    debconf under fakeroot.  Closes: #577299
+
+  [ Joey Hess ]
+  * Fix uninitialized value warning if debconf -f is not followed by
+    another parameter. Closes: #575870
+
+  [ Programs translation updates ]
+  * Simplified Chinese (soyi).
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 12 Apr 2010 22:05:07 +0100
+
 debconf (1.5.30) unstable; urgency=low
 
   * Don't open file databases read-write if the database is read-only, or if
