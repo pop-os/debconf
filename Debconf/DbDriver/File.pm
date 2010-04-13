@@ -92,27 +92,30 @@ sub init {
 		close $fh;
 	}
 
-	# Open file for read but also with write access so below exclusive
-	# lock can be done portably.
-	my $openmode;
-	if ($this->{readonly} or not -w $this->{filename}) {
-		$openmode = "<";
-	} else {
-		$openmode = "+<";
-	}
-	if (! open ($this->{_fh}, $openmode, $this->{filename})) {
-		$this->error("could not open $this->{filename}: $!");
-		return; # always abort, even if not throwing fatal error
-	}
-
+	my $implicit_readonly=0;
 	if (! $this->{readonly}) {
-		# Now lock the file with flock locking. I don't wait on
-		# locks, just error out. Since I open a lexical filehandle,
-		# the lock is dropped when this object is destroyed.
-		while (! flock($this->{_fh}, LOCK_EX | LOCK_NB)) {
-			next if $! == &POSIX::EINTR;
-			$this->error("$this->{filename} is locked by another process: $!");
-			last;
+		# Open file for read but also with write access so
+		# exclusive lock can be done portably.
+		if (open ($this->{_fh}, "+<", $this->{filename})) {
+			# Now lock the file with flock locking. I don't
+			# wait on locks, just error out. Since I open a
+			# lexical filehandle, the lock is dropped when
+			# this object is destroyed.
+			while (! flock($this->{_fh}, LOCK_EX | LOCK_NB)) {
+				next if $! == &POSIX::EINTR;
+				$this->error("$this->{filename} is locked by another process: $!");
+				last;
+			}
+		}
+		else {
+			# fallthrough to readonly mode
+			$implicit_readonly=1;
+		}
+	}
+	if ($this->{readonly} || $implicit_readonly) {
+		if (! open ($this->{_fh}, "<", $this->{filename})) {
+			$this->error("could not open $this->{filename}: $!");
+			return; # always abort, even if not throwing fatal error
 		}
 	}
 
@@ -126,7 +129,7 @@ sub init {
 		$this->{cache}->{$item}=$cache;
 	}
 	# Close only if we are not keeping a lock.
-	if ($this->{readonly}) {
+	if ($this->{readonly} || $implicit_readonly) {
 		close $this->{_fh};
 	}
 }
