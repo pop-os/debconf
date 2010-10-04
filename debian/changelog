@@ -1,3 +1,26 @@
+debconf (1.5.36) unstable; urgency=low
+
+  [ Debconf translation updates ]
+  * Spanish (Javier Fernández-Sanguino Peña).  Closes: #592176
+  * Icelandic added (Sveinn í Felli).
+  * Telugu (Arjuna Rao Chavala).  Closes: #593095
+  * Arabic (Ossama Khayat).  Closes: #595453
+  * Danish (Joe Hansen).  Closes: #595439
+  * Turkish (Recai Oktas).
+  * Malayalam (Saji Nediyanchath).
+  * Hindi (Kumar Appaiah).
+  * Japanese (Kenshi Muto).  Closes: #595469
+  * Korean (Changwoo Ryu).  Closes: #595517
+  * Indonesian (Arief S Fitrianto).  Closes: #596197
+  * Lithuanian (Kęstutis Biliūnas).  Closes: #596204
+  * Portuguese (Miguel Figueiredo).  Closes: #596508
+  * Persian (Behrad Eslamifar).  Closes: #590697
+
+  [ Programs translation updates ]
+  * Spanish (Javier Fernández-Sanguino Peña).  Closes: #592178
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 04 Oct 2010 13:27:50 +0100
+
 debconf (1.5.35) unstable; urgency=low
 
   [ Sune Vuorela ]

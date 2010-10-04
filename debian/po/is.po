@@ -1,46 +1,50 @@
+# translation of debconf_debian_is.po to Icelandic
+# Copyright (C) 2010 Free Software Foundation
+# This file is distributed under the same license as the PACKAGE package.
 #
+# Sveinn ?? Felli <sveinki@nett.is>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: debconf_debian_is\n"
 "Report-Msgid-Bugs-To: debconf@packages.debian.org\n"
 "POT-Creation-Date: 2009-08-24 19:24+0200\n"
-"PO-Revision-Date: 2010-09-04 18:01+0900\n"
-"Last-Translator:  Kenshi Muto <kmuto@debian.org>\n"
-"Language-Team: Debian L10n Japanese <debian-l10n-japanese@lists.debian.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2010-07-19 07:09+0000\n"
+"Last-Translator: Sveinn ?? Felli <sveinki@nett.is>\n"
+"Language-Team: Icelandic <rglug@rglug.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "Dialog"
-msgstr "ダイアログ"
+msgstr "Samskiptagluggi"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "Readline"
-msgstr "Readline"
+msgstr "Lesl??na"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "Editor"
-msgstr "エディタ"
+msgstr "Ritill"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "Noninteractive"
-msgstr "非対話的"
+msgstr "??gagnvirkt"
 
 #. Type: select
 #. Description
 #: ../templates:1002
 msgid "Interface to use:"
-msgstr "利用するインターフェイス:"
+msgstr "Vi??m??t sem nota skal:"
 
 #. Type: select
 #. Description
@@ -48,9 +52,7 @@ msgstr "利用するインターフェイス:"
 msgid ""
 "Packages that use debconf for configuration share a common look and feel. "
 "You can select the type of user interface they use."
-msgstr ""
-"設定に debconf を用いるパッケージは、共通のルック＆フィールを用います。どの種"
-"類のユーザインターフェイスを用いるかを選んでください。"
+msgstr "Forrit sem nota debconf sem stillingavi??m??t deila me?? s??r svipu??u ??tliti og ??fer??. ???? getur vali?? hverskonar notandavi??m??t ??au nota."
 
 #. Type: select
 #. Description
@@ -62,42 +64,37 @@ msgid ""
 "desktops (but may be used in any X environment). The editor frontend lets "
 "you configure things using your favorite text editor. The noninteractive "
 "frontend never asks you any questions."
-msgstr ""
-"「ダイアログ」は全画面の文字ベースのインターフェイスです。「readline」はより"
-"伝統的なプレーンテキストのインターフェイスです。「gnome」と「kde」は近代的な "
-"X のインターフェイスで、それぞれのデスクトップに適しています (ほかの X 環境で"
-"利用することもできます)。「エディタ」を用いるとあなたの好きなテキストエディタ"
-"を用いることができます。「非対話的」を選ぶとまったく質問をしなくなります。"
+msgstr "Vi??m??t samskiptagluggans er textavi??m??t ?? heilskj?? (DOS-l??kt), ?? me??an lesl??na er meira ?? ??tt vi?? hef??bundna skipanal??nu. B????i GNOME og KDE vi??m??tin eru n??t??ma gluggavi??m??t sem samsvara samnefndum skj??bor??sumhverfum (en sem h??gt er a?? nota ?? hva??a gluggaumhverfi sem er). Ritilsvi??m??ti?? gerir ????r kleift a?? stilla hluti me?? ??v?? a?? nota ??ann ritil sem ????r finnst ????gilegast a?? vinna me??. ??gagnvirkt vi??m??t spyr ??ig ekki neinna spurninga."
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "critical"
-msgstr "重要"
+msgstr "mikilv??gt"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "high"
-msgstr "高"
+msgstr "mikill"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "medium"
-msgstr "中"
+msgstr "mi??lungs"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "low"
-msgstr "低"
+msgstr "l??till"
 
 #. Type: select
 #. Description
 #: ../templates:2002
 msgid "Ignore questions with a priority less than:"
-msgstr "より低い優先度の質問を無視:"
+msgstr "Sleppa spurningum sem hafa l??gri forgang en:"
 
 #. Type: select
 #. Description
@@ -111,14 +108,12 @@ msgid ""
 "  - 'medium' is for normal questions\n"
 "  - 'low' is for control freaks who want to see everything"
 msgstr ""
-"あなたが答えたい質問のうち、最低の優先度のものを選択してください。\n"
-" - 「重要」は、ユーザが介在しないとシステムを破壊しかねないような項目用で"
-"す。\n"
-"   あなたが初心者か、あるいは急いでいるのであればこれを選んでください。\n"
-" - 「高」は、適切なデフォルトの回答がないような項目用です。\n"
-" - 「中」は、適切なデフォルトの回答があるような普通の項目用です。\n"
-" - 「低」は、ほとんどの場合にデフォルトの回答でかまわないような、ささいな項目"
-"用です。"
+"Debconf forgangsra??ar spurningunum sem ???? ver??ur be??in(n) um a?? svara. Veldu ??ann l??gsta forgang spurninga sem ???? vilt sj??:\n"
+"  - 'mikilv??gt' spyr ??ig einungis ef a?? kerfi?? g??ti or??i?? ??starfh??ft.\n"
+"    Veldu ??etta ef ???? ert byrjandi e??a a?? fl??ta ????r.\n"
+"  - 'mikill' er fyrir frekar mikilv??gar spurningar\n"
+"  - 'mi??lungs' er fyrir venjulegar spurningar\n"
+"  - 'l??till' er fyrir fullkomnunarsinna sem vilja stilla allt sj??lfir"
 
 #. Type: select
 #. Description
@@ -126,21 +121,19 @@ msgstr ""
 msgid ""
 "Note that no matter what level you pick here, you will be able to see every "
 "question if you reconfigure a package with dpkg-reconfigure."
-msgstr ""
-"注意: ここで何を選択しても、以前に行った質問は dpkg-reconfigure プログラムを"
-"使用して表示できます。"
+msgstr "Athuga??u a?? ??a?? er sama hva??a stig ???? velur h??rna, ef ???? endurstillir pakka me?? dpkg-reconfigure ???? muntu geta s???? allar vi??komandi spurningar aftur."
 
 #. Type: text
 #. Description
 #: ../templates:3001
 msgid "Installing packages"
-msgstr "パッケージをインストールしています"
+msgstr "Set upp pakka"
 
 #. Type: text
 #. Description
 #: ../templates:4001
 msgid "Please wait..."
-msgstr "しばらくお待ちください..."
+msgstr "B??ddu a??eins..."
 
 #. Type: text
 #. Description
@@ -149,4 +142,5 @@ msgstr "しばらくお待ちください..."
 #. to install a package or a collection of packages
 #: ../templates:6001
 msgid "Media change"
-msgstr "メディアの変更"
+msgstr "Skipti ?? mi??li"
+
