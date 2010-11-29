@@ -1,3 +1,26 @@
+debconf (1.5.37) unstable; urgency=low
+
+  [ Manpages translation ]
+  * Spanish added (huge thanks to Omar Campagne). Closes: #599401
+  * French completed (Christian Perrier).
+
+  [ Debconf translations ]
+  * Icelandic (Sveinn í Felli).
+  * Serbian (Janos Guljas).  Closes: #600142
+  * Catalan (Jordi Mallach).  Closes: #600626
+  * Dutch (Eric Spreen).  Closes: #603953
+  * Greek (Emmanuel Galatoulas).  Closes: #604451
+  * Dzongkha (dawa pemo).  Closes: #604458
+
+  [ Helge Kreutzmann ]
+  * Fix (mostly) typos. Thanks Florian Rehnisch <eixman@gmx.de> for noticing.
+    Addresses: #518395.
+    Also unfuzzy all translations as far as possible.
+  * Update German translation where unfuzzing was not enough (actually a no-op
+    as Florian already translated appropriately).
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 29 Nov 2010 18:11:22 +0000
+
 debconf (1.5.36) unstable; urgency=low
 
   [ Debconf translation updates ]
