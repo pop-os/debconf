@@ -3,7 +3,7 @@
 
 ** Form generated from reading ui file 'WizardUi.ui'
 **
-** Created: Sat Aug 7 16:20:52 2010
+** Created: Mon Oct 4 13:28:16 2010
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
