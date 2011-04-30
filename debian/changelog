@@ -1,3 +1,23 @@
+debconf (1.5.39) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Moved to a git repository. Updated control file fields.
+  * Removed debconf-english dummy package, and dropped debconf-i18n to a
+    Recommends. Debootstrap will still install debconf-i18n as it is
+    priority Required.
+  * debconf-set-selections: Fix comment handling to match description.
+    In particular, continued lines that start with a "#" are not comments.
+    And, comments only occur at the start of a line (possibly with some
+    whitespace before). Closes: #589519
+  * Updated Danish translation of program po file. Closes: #624645
+
+  [ Steve Langasek ]
+  * Mark debconf Multi-Arch: foreign to indicate that it satisfies the
+    dependencies of packages from other than the native arch.  Closes:
+    #614197
+
+ -- Joey Hess <joeyh@debian.org>  Sat, 30 Apr 2011 12:21:12 -0400
+
 debconf (1.5.38) unstable; urgency=low
 
   [ Colin Watson ]
