@@ -1,3 +1,40 @@
+debconf (1.5.40) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Updated Russian man page translation. Closes: #625935
+  * Updated Galician translation of program po file. Closes: #626475
+  * Add back documenation for the kde frontend.
+
+  [ Martin Pitt ]
+  * Debconf/FrontEnd/Gnome.pm: Port from Gnome2::Druid to Gtk2::Assistant.
+    Original patch by Jani Monoses, thanks! (Closes: #542175, LP: #415038)
+  * Debconf/Element/Gnome/Select.pm: Drop unused Gnome2 import.
+  * debian/control: Change libgnome2-perl suggestion to libgtk2-perl
+    accordingly.
+
+  [ Colin Watson ]
+  * Fix Gnome frontend to honour backup capability again, and make backup
+    page handling work properly.
+  * Version libgtk2-perl Suggests to match the upstream version where
+    Gtk2::Assistant was introduced.
+  * Convert from deprecated Gtk2::Combo to Gtk2::ComboBox.
+  * Make sure you can't press Forward on a progress bar in the Gnome
+    frontend.
+  * debconf.py: Drop popen2 compatibility code.  subprocess has been
+    available since Python 2.4, which is old enough that it was dropped from
+    squeeze.
+  * Build for all currently supported Python 2 versions (closes: #584844,
+    #626706).
+  * Convert to dh_python2 (closes: #603965, #616786).
+  * Add Python 3 support.
+  * Perl gets a bit confused by Debconf::Config and Debconf::Priority using
+    each other, and objects to bareword use of priority_list in
+    Debconf::Config if you do 'use strict; use Debconf::Priority' before
+    Debconf::Config is loaded.  Work around this.  Thanks to James Hunt for
+    pointing this out.
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 22 Jun 2011 22:50:23 +0100
+
 debconf (1.5.39) unstable; urgency=low
 
   [ Joey Hess ]
