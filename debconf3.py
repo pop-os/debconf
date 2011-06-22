@@ -61,14 +61,14 @@ class Debconf:
 
     def command(self, command, *params):
         command = command.upper()
-        self.write.write("%s %s\n" % (command, ' '.join(map(str, params))))
+        self.write.write(("%s %s\n" % (command, ' '.join(map(str, params)))).encode())
         self.write.flush()
 
         while True:
             try:
-                resp = self.read.readline().rstrip('\n')
+                resp = self.read.readline().decode().rstrip('\n')
                 break
-            except IOError, e:
+            except IOError as e:
                 if e.errno == errno.EINTR:
                     continue
                 else:
@@ -96,14 +96,14 @@ class Debconf:
             raise DebconfError(status, data)
 
     def stop(self):
-        self.write.write('STOP\n')
+        self.write.write(b'STOP\n')
         self.write.flush()
 
     def forceInput(self, priority, question):
         try:
             self.input(priority, question)
             return 1
-        except DebconfError, e:
+        except DebconfError as e:
             if e.args[0] != 30:
                 raise
         return 0
@@ -162,7 +162,7 @@ if __name__ == '__main__':
     less = db.getBoolean('less/add_mime_handler')
     aptlc = db.getString('apt-listchanges/email-address')
     db.stop()
-    print db.version
-    print db.capabilities
-    print less
-    print aptlc
+    print(db.version)
+    print(db.capabilities)
+    print(less)
+    print(aptlc)

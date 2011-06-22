@@ -1,21 +1,20 @@
 # translation of ru.po to Russian
-# SOME DESCRIPTIVE TITLE
 # Copyright (C) 2006, 2008, 2009, 2010 Free Software Foundation, Inc.
 #
 # Yuri Kozlov <kozlov.y@gmail.com>, 2006, 2008.
-# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: debconf 1.5.29\n"
-"POT-Creation-Date: 2010-10-17 18:28+0000\n"
-"PO-Revision-Date: 2010-10-17 20:42+0200\n"
+"Project-Id-Version: debconf 1.5.39\n"
+"POT-Creation-Date: 2010-11-29 18:11+0000\n"
+"PO-Revision-Date: 2011-05-07 11:22+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -2818,7 +2817,7 @@ msgstr "B<server>"
 #. type: Plain text
 #: debconf.conf.5:242
 msgid "The host name or IP address of an LDAP server to connect to."
-msgstr "Имя хоста или IP адрес LDAP сервера, к которому нужно подключаться."
+msgstr "Имя узла или IP адрес LDAP сервера, к которому нужно подключаться."
 
 # type: TP
 #. type: TP
@@ -4476,7 +4475,7 @@ msgstr ""
 "резервная база данных предоставляет ответы на вопросы, на которые не нашлось "
 "ответов в других базах данных, она служит только как резервная; после других "
 "баз данных. Если вам нужно вместо временной заменить существующие значения "
-"на удалённом хосте, вы должны использовать переменную DEBCONF_DB_OVERRIDE. "
+"на удалённом узле, вы должны использовать переменную DEBCONF_DB_OVERRIDE. "
 "Подобно DEBCONF_DB_FALLBACK, она указывает на временную базу данных, но эта "
 "база данных просматривается раньше всех остальных, и может использоваться "
 "для замены существующих значений."
@@ -6433,13 +6432,6 @@ msgstr "ДРУГИЕ СЦЕНАРИИ"
 # type: Plain text
 #. type: Plain text
 #: debconf-devel.7:502
-#, fuzzy
-#| msgid ""
-#| "Besides the config script and postinst, you can use debconf in any of the "
-#| "other maintainer scripts. Most commonly, you'll be using debconf in your "
-#| "postrm, to call the PURGE command when your package is removed, to clean "
-#| "out its entries in the debconf database. (This is automatically set up "
-#| "for you by B<dh_installdebconf>(1)B<,> by the way.)"
 msgid ""
 "Besides the config script and postinst, you can use debconf in any of the "
 "other maintainer scripts. Most commonly, you'll be using debconf in your "
@@ -6450,8 +6442,8 @@ msgstr ""
 "Кроме сценариев config и postinst, вы можете использовать debconf в любом "
 "сценарии сопровождения пакета. Наиболее часто вы будете использовать debconf "
 "в сценарии postrm, чтобы вызвать команду PURGE при удалении пакета для "
-"удаления всех записей о пакете из базы данных debconf. (Кстати, это "
-"настраивается автоматически в B<dh_installdebconf>(1))"
+"удаления всех записей о пакете из базы данных debconf (кстати, это "
+"настраивается автоматически с помощью B<dh_installdebconf>(1))."
 
 # type: Plain text
 #. type: Plain text
@@ -6703,19 +6695,14 @@ msgstr "B<DEBCONF_C_VALUES>"
 # type: Plain text
 #. type: Plain text
 #: debconf-devel.7:599
-#, fuzzy
-#| msgid ""
-#| "If this environment variable is set to 'true', the frontend will display "
-#| "the values in Choices-C field (if present) of select and multiselect "
-#| "templates rather than the descriptive values."
 msgid ""
 "If this environment variable is set to 'true', the frontend will display the "
 "values in Choices-C fields (if present) of select and multiselect templates "
 "rather than the descriptive values."
 msgstr ""
-"Если значение данной переменной окружения равно 'true', то интерфейсная "
-"программа будет показывать значения шаблонов выбора и множественного выбора "
-"в поле Choices-C (если есть) вместо описательных значений."
+"Если значение данной переменной окружения равно «true», то интерфейсная "
+"программа будет показывать значения шаблонов Choices-C (если есть) выбора и "
+"множественного выбора, вместо описательных значений."
 
 # type: TP
 #. type: TP
@@ -7653,15 +7640,6 @@ msgstr ""
 # type: Plain text
 #. type: Plain text
 #: debconf-devel.7:958
-#, fuzzy
-#| msgid ""
-#| "Debconf sets DEBCONF_RECONFIGURE=1 before running postinst scripts, so a "
-#| "postinst script that needs to avoid some expensive operation when "
-#| "reconfigured can look at that variable. This is a hack because the right "
-#| "thing would be to pass $1 = \"reconfigure\", but doing so without "
-#| "breaking all the postinsts that use debconf is difficult. The migration "
-#| "plan away from this hack is to encourage people to write postinsts that "
-#| "accept \"reconfigure\", and once they all do, begin passing that variable."
 msgid ""
 "Debconf sets DEBCONF_RECONFIGURE=1 before running postinst scripts, so a "
 "postinst script that needs to avoid some expensive operation when "
@@ -7672,13 +7650,13 @@ msgid ""
 "\"reconfigure\", and once they all do, begin passing that parameter."
 msgstr ""
 "Debconf устанавливает DEBCONF_RECONFIGURE=1 перед запуском сценариев "
-"postinst, поэтому сценарий postinst которому требуется избежать некоторой "
-"затратной операции перед перенастройкой может проверить наличие этой "
-"переменной. Это хак, так как правильно сделать это -- передать $1 = "
-"\"reconfigure\", но это трудно не сломав все сценарии postinst, использующие "
-"debconf. План ухода с этого хака одобрен людьми пишущими сценарии postinst, "
-"которые принимают \"reconfigure\", и как только все сделают это, начнётся "
-"передача переменной."
+"postinst, поэтому сценарий postinst, которому требуется избежать некоторой "
+"затратной операции перед перенастройкой, может проверить наличие этой "
+"переменной. Это хак, так как правильно сделать это — передать $1 = "
+"\"reconfigure\", но этого делать нельзя, так как будут работать неправильно "
+"все сценарии postinst, использующие debconf. Разработан план перехода на "
+"приём сценариями postinst значения «reconfigure», и как только все сделают "
+"это, начнётся передача этого параметра."
 
 # type: Plain text
 #. type: Plain text
