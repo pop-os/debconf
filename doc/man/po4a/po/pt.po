@@ -2,12 +2,12 @@
 # Copyright (C) 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the debconf package.
 #
-# Américo Monteiro <a_monteiro@netcabo.pt>, 2010.
+# Américo Monteiro <a_monteiro@netcabo.pt>, 2010, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: debconf 1.5.29\n"
+"Project-Id-Version: debconf\n"
 "POT-Creation-Date: 2011-07-29 12:37+0300\n"
-"PO-Revision-Date: 2010-10-17 20:41+0200\n"
+"PO-Revision-Date: 2012-01-15 19:49+0000\n"
 "Last-Translator: Américo Monteiro <a_monteiro@netcabo.pt>\n"
 "Language-Team: Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODINGX-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.4\n"
 
 #. type: SH
 #: ../../debconf:3 ../../Debconf/Client/ConfModule.pm:3
@@ -3691,7 +3691,7 @@ msgstr ""
 #: debconf.7:96
 #, no-wrap
 msgid "B<kde>"
-msgstr ""
+msgstr "B<kde>"
 
 #. type: Plain text
 #: debconf.7:102
@@ -3701,6 +3701,10 @@ msgid ""
 "must install libqt-perl. The frontend will fall back to dialog if some of "
 "the prerequisites are not met."
 msgstr ""
+"Este frontend disponibiliza uma GUI X simples escrita com a biblioteca Qt. "
+"Adapta-se bem ao ambiente de trabalho KDE. Claro que você precisa de um "
+"DISPLAY para usar este frontend e tem de instalar a libqt-perl. O frontend "
+"irá cair para dialog se algum dos pre-requisitos não estiver satisfeito."
 
 #. type: TP
 #: debconf.7:102
@@ -5884,13 +5888,6 @@ msgstr "OUTROS SCRIPTS"
 
 #. type: Plain text
 #: debconf-devel.7:502
-#, fuzzy
-#| msgid ""
-#| "Besides the config script and postinst, you can use debconf in any of the "
-#| "other maintainer scripts. Most commonly, you'll be using debconf in your "
-#| "postrm, to call the PURGE command when your package is removed, to clean "
-#| "out its entries in the debconf database. (This is automatically set up "
-#| "for you by B<dh_installdebconf>(1)B<,> by the way.)"
 msgid ""
 "Besides the config script and postinst, you can use debconf in any of the "
 "other maintainer scripts. Most commonly, you'll be using debconf in your "
@@ -5900,7 +5897,7 @@ msgid ""
 msgstr ""
 "À parte dos scripts config e postinst, você pode usar o debconf em qualquer "
 "dos outros scripts do maintainer. Mais geralmente, você vai usar debconf no "
-"seu postrm, para chamar o comando PURGE quando o seu pacote é removido, para "
+"seu postrm, para chamar o comando PURGE quando o seu pacote é purgado, para "
 "limpar as suas entradas na base de dados debconf. (Já agora, isto é definido "
 "automaticamente para si por B<dh_installdebconf>(1)B<,>.)"
 
@@ -6139,19 +6136,14 @@ msgstr "B<DEBCONF_C_VALUES>"
 
 #. type: Plain text
 #: debconf-devel.7:599
-#, fuzzy
-#| msgid ""
-#| "If this environment variable is set to 'true', the frontend will display "
-#| "the values in Choices-C field (if present) of select and multiselect "
-#| "templates rather than the descriptive values."
 msgid ""
 "If this environment variable is set to 'true', the frontend will display the "
 "values in Choices-C fields (if present) of select and multiselect templates "
 "rather than the descriptive values."
 msgstr ""
 "Se esta variável de ambiente for definida para 'true', o frontend irá "
-"mostrar os valores no campo Choices-C (se presente) de templates de selecção "
-"e multi-selecção em vez dos valores descritivos."
+"mostrar os valores nos campos Choices-C (se presentes) de templates de "
+"selecção e multi-selecção em vez dos valores descritivos."
 
 #. type: TP
 #: debconf-devel.7:600
@@ -7037,15 +7029,6 @@ msgstr ""
 
 #. type: Plain text
 #: debconf-devel.7:958
-#, fuzzy
-#| msgid ""
-#| "Debconf sets DEBCONF_RECONFIGURE=1 before running postinst scripts, so a "
-#| "postinst script that needs to avoid some expensive operation when "
-#| "reconfigured can look at that variable. This is a hack because the right "
-#| "thing would be to pass $1 = \"reconfigure\", but doing so without "
-#| "breaking all the postinsts that use debconf is difficult. The migration "
-#| "plan away from this hack is to encourage people to write postinsts that "
-#| "accept \"reconfigure\", and once they all do, begin passing that variable."
 msgid ""
 "Debconf sets DEBCONF_RECONFIGURE=1 before running postinst scripts, so a "
 "postinst script that needs to avoid some expensive operation when "
@@ -7061,7 +7044,7 @@ msgstr ""
 "correcto seria passar $1 = \"reconfigure\", mas fazê-lo sem quebrar todos os "
 "postinsts que usam debconf é difícil. O plano de migração para fugir a este "
 "truque é encorajar as pessoas a escrever postinsts que aceitem \"reconfigure"
-"\", e quanto todos o fizerem, começar a passar essa variável."
+"\", e quanto todos o fizerem, começar a passar esse parâmetro."
 
 #. type: Plain text
 #: debconf-devel.7:961

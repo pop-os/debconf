@@ -1,3 +1,45 @@
+debconf (1.5.42) unstable; urgency=low
+
+  [ Joey Hess ]
+  * File DbDriver now creates the directory for the file if it is missing.
+    (All other DbDrivers that write files already did this.) Closes: #636621
+  
+  [ Emmet Hikory ]
+  * Display error messages in noninteractive frontend (Closes: #367497)
+
+  [ Debconf translations ]
+  * Polish (Michał Kułach).  Closes: #657264
+
+  [ Manpages translations ]
+  * German updated.
+  * Portugese updated (Américo Monteiro).
+  * Spanish updated. Closes: #636241
+  * Sinhala; (Danishka Navin).  Closes: #641106
+  * Russian updated. Closes: #656110
+
+  [ Programs translations ]
+  * Norwegian Bokmål updated. Closes: #654798
+
+  [ Joey Hess ]
+  * Add a belt-and-suspenders test that Text::CharWidth::mblen is not
+    returning bogus values, before using Text::WrapI18n. See #641957
+  * Avoid an uninitialized value warning when a blank line is received
+    from the client. Closes: #651642
+
+  [ Colin Watson ]
+  * Remove all hardcoded executable paths, using a new Debconf::Path module.
+
+  [ Raphaël Hertzog ]
+  * Set environment variables expected by maintainer scripts. Closes:
+    #560317
+  * Do not hardcode the path of maintainer scripts, in order to support the
+    multiarch layout.
+
+  [ Colin Watson ]
+  * Process any newly pending triggers after running maintainer scripts.
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 14 Mar 2012 09:08:49 +0000
+
 debconf (1.5.41) unstable; urgency=low
 
   [ Colin Watson ]

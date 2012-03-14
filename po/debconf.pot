@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-30 12:23-0400\n"
+"POT-Creation-Date: 2012-01-21 02:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,15 +103,15 @@ msgstr ""
 
 #: ../Debconf/Element/Noninteractive/Error.pm:39
 msgid ""
-"Debconf was not configured to display this error message, so it mailed it to "
-"you."
+"Debconf is not confident this error message was displayed, so it mailed it "
+"to you."
 msgstr ""
 
-#: ../Debconf/Element/Noninteractive/Error.pm:63
+#: ../Debconf/Element/Noninteractive/Error.pm:66
 msgid "Debconf"
 msgstr ""
 
-#: ../Debconf/Element/Noninteractive/Error.pm:86
+#: ../Debconf/Element/Noninteractive/Error.pm:89
 #, perl-format
 msgid "Debconf, running at %s"
 msgstr ""
@@ -186,7 +186,7 @@ msgid ""
 "read the edited file, and use the values you entered to configure the system."
 msgstr ""
 
-#: ../Debconf/FrontEnd/Gnome.pm:97 ../Debconf/FrontEnd/Kde.pm:100
+#: ../Debconf/FrontEnd/Gnome.pm:144 ../Debconf/FrontEnd/Kde.pm:100
 #: ../Debconf/FrontEnd/Kde.pm:104
 #, perl-format
 msgid "Debconf on %s"
@@ -246,50 +246,50 @@ msgstr ""
 msgid "Template #%s in %s does not contain a 'Template:' line\n"
 msgstr ""
 
-#: ../dpkg-preconfigure:121
+#: ../dpkg-preconfigure:125
 #, perl-format
 msgid "must specify some debs to preconfigure"
 msgstr ""
 
-#: ../dpkg-preconfigure:126
+#: ../dpkg-preconfigure:130
 msgid "delaying package configuration, since apt-utils is not installed"
 msgstr ""
 
-#: ../dpkg-preconfigure:133
+#: ../dpkg-preconfigure:137
 #, perl-format
 msgid "unable to re-open stdin: %s"
 msgstr ""
 
-#: ../dpkg-preconfigure:164 ../dpkg-preconfigure:176
+#: ../dpkg-preconfigure:168 ../dpkg-preconfigure:180
 #, perl-format
 msgid "apt-extracttemplates failed: %s"
 msgstr ""
 
-#: ../dpkg-preconfigure:168 ../dpkg-preconfigure:180
+#: ../dpkg-preconfigure:172 ../dpkg-preconfigure:184
 #, perl-format
 msgid "Extracting templates from packages: %d%%"
 msgstr ""
 
-#: ../dpkg-preconfigure:190
+#: ../dpkg-preconfigure:194
 msgid "Preconfiguring packages ...\n"
 msgstr ""
 
-#: ../dpkg-preconfigure:202
+#: ../dpkg-preconfigure:206
 #, perl-format
 msgid "template parse error: %s"
 msgstr ""
 
-#: ../dpkg-preconfigure:216
+#: ../dpkg-preconfigure:220
 #, perl-format
 msgid "debconf: can't chmod: %s"
 msgstr ""
 
-#: ../dpkg-preconfigure:227
+#: ../dpkg-preconfigure:231
 #, perl-format
 msgid "%s failed to preconfigure, with exit status %s"
 msgstr ""
 
-#: ../dpkg-reconfigure:103
+#: ../dpkg-reconfigure:107
 msgid ""
 "Usage: dpkg-reconfigure [options] packages\n"
 "  -a,  --all\t\t\tReconfigure all packages.\n"
@@ -299,26 +299,26 @@ msgid ""
 "       --no-reload\t\tDo not reload templates. (Use with caution.)"
 msgstr ""
 
-#: ../dpkg-reconfigure:117
+#: ../dpkg-reconfigure:121
 #, perl-format
 msgid "%s must be run as root"
 msgstr ""
 
-#: ../dpkg-reconfigure:150
+#: ../dpkg-reconfigure:154
 msgid "please specify a package to reconfigure"
-msgstr ""
-
-#: ../dpkg-reconfigure:171
-#, perl-format
-msgid "%s is not installed"
 msgstr ""
 
 #: ../dpkg-reconfigure:175
 #, perl-format
+msgid "%s is not installed"
+msgstr ""
+
+#: ../dpkg-reconfigure:179
+#, perl-format
 msgid "%s is broken or not fully installed"
 msgstr ""
 
-#: ../dpkg-reconfigure:254
+#: ../dpkg-reconfigure:258
 #, perl-format
 msgid "Cannot read status file: %s"
 msgstr ""
