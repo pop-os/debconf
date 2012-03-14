@@ -85,8 +85,6 @@ if (exists $ENV{DEBCONF_USE_CDEBCONF} and $ENV{DEBCONF_USE_CDEBCONF} ne '') {
     exec "/usr/lib/cdebconf/dpkg-reconfigure", @ARGV;
 }
 
-my $infodir="/var/lib/dpkg/info";
-
 use strict;
 use Debconf::Db;
 use Debconf::Gettext;
@@ -161,6 +159,8 @@ else {
 # hysterical raisens.
 $ENV{DEBCONF_RECONFIGURE}=1;
 
+my %initial_triggers=map { $_ => 1 } triggers_pending();
+
 foreach my $pkg (@packages) {
 	# Set default title.
 	$frontend->default_title($pkg);
@@ -170,6 +170,8 @@ foreach my $pkg (@packages) {
 	$_=`dpkg --status $pkg`;
 	my ($version)=m/Version: (.*)\n/;
 	my ($status)=m/Status: (.*)\n/;
+	my ($package)=m/Package: (.*)\n/;
+	my ($arch)=m/Architecture: (.*)\n/;
 	if (! $force) {
 		if (! defined $status || $status =~ m/not-installed$/) {
 			print STDERR "$0: ".sprintf(gettext("%s is not installed"), $pkg)."\n";
@@ -181,10 +183,21 @@ foreach my $pkg (@packages) {
 		}
 	}
 	
+	my @control_paths=`dpkg-query --control-path $pkg`;
+	map chomp, @control_paths;
+	sub control_path {
+		my $file = shift;
+		my $path = (grep /\.\Q$file\E$/, @control_paths)[0];
+		chomp($path) if defined $path;
+		return $path;
+	}
+
 	if ($reload) {
 		# Load up templates just in case they aren't already.
-		Debconf::Template->load("$infodir/$pkg.templates", $pkg)
-			if -e "$infodir/$pkg.templates";
+		my $templates=control_path('templates');
+		if ($templates and -e $templates) {
+			Debconf::Template->load($templates, $pkg);
+		}
 	}
 
 	# Simulation of reinstalling a package, without bothering with
@@ -196,13 +209,20 @@ foreach my $pkg (@packages) {
 		          ['config',   'reconfigure', $version],
 			  ['postinst', 'configure',   $version]) {
 		my $script=shift @$info;
-		next unless -x "$infodir/$pkg.$script";
+		my $path_script=control_path($script);
+
+		next unless $path_script and -x $path_script;
 
 		my $is_confmodule='';
 
+		# Set environment variables expected by maintainer scripts
+		$ENV{DPKG_MAINTSCRIPT_PACKAGE}=$package;
+		$ENV{DPKG_MAINTSCRIPT_ARCH}=$arch;
+		$ENV{DPKG_MAINTSCRIPT_NAME}=$script;
+
 		if ($script ne 'config') {
 			# Test to see if the script uses debconf.
-			open (IN, "<$infodir/$pkg.$script");
+			open (IN, "<$path_script");
 			while (<IN>) {
 				if (/confmodule/i) {
 					$is_confmodule=1;
@@ -214,8 +234,7 @@ foreach my $pkg (@packages) {
 		
 		if ($script eq 'config' || $is_confmodule) {
 			# Start up the confmodule.
-			my $confmodule=make_confmodule(
-				"$infodir/$pkg.$script", @$info);
+			my $confmodule=make_confmodule($path_script, @$info);
 	
 			# Make sure any questions the confmodule registers
 			# are owned by this package.
@@ -234,7 +253,7 @@ foreach my $pkg (@packages) {
 			Debconf::Db->save;
 			
 			delete $ENV{DEBIAN_HAS_FRONTEND};
-			my $ret=system("$infodir/$pkg.$script", @$info);
+			my $ret=system($path_script, @$info);
 			if (int($ret / 256) != 0) {
 				exit int($ret / 256);
 			}
@@ -244,6 +263,23 @@ foreach my $pkg (@packages) {
 		}
 	}
 }
+
+# Maintainer scripts may have activated triggers.  If so, try to process
+# them.
+my @new_triggers;
+do {
+	@new_triggers=();
+	foreach my $trigpend (triggers_pending()) {
+		push @new_triggers, $trigpend
+			if not exists $initial_triggers{$trigpend};
+	}
+	if (@new_triggers) {
+		my $ret=system("dpkg", "--configure", @new_triggers);
+		if (int($ret / 256) != 0) {
+			exit int($ret / 256);
+		}
+	}
+} while (@new_triggers);
 
 $frontend->shutdown;
 
@@ -263,6 +299,26 @@ sub allpackages {
 	close STATUS;
 
 	return sort @ret;
+}
+
+# Returns a list of all packages with pending triggers.
+sub triggers_pending {
+	my @ret;
+	local $_;
+
+	open (QUERY, '-|', 'dpkg-query', '-W',
+		'-f', '${Package} ${binary:Package}\t${Triggers-Pending}\n');
+	while (<QUERY>) {
+		my ($pkgnames, $triggers) = split /\t/;
+		if (length $triggers) {
+			# Handle multiarch.
+			my ($pkg, $binpkg) = split ' ', $pkgnames;
+			push @ret, (length $binpkg ? $binpkg : $pkg);
+		}
+	}
+	close QUERY;
+
+	return @ret;
 }
 
 =head1 AUTHOR
