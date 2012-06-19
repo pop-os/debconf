@@ -1,3 +1,18 @@
+debconf (1.5.44) unstable; urgency=low
+
+  [ Debconf translations ]
+  * Vietnamese (Hai Lang)
+  * Latvian (Rūdolfs Mazurs).  Closes: #674707
+  * Lithuanian (Rimas Kudelis).  Closes: #675699
+  * Welsh (Daffyd Tomos).
+
+  [ Joey Hess ]
+  * File DbDriver: Get actual filename, following symlinks.
+    This makes it possible to switch back and forth between
+    debconf and cdebconf. Thanks, Regis Boudin
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 19 Jun 2012 19:03:42 -0400
+
 debconf (1.5.43) unstable; urgency=low
 
   [ Programs translations ]
