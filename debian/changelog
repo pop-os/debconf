@@ -1,3 +1,40 @@
+debconf (1.5.46) unstable; urgency=low
+
+  [ Manpages translations ]
+  * Put the Danish translation of manpages from #664901 in the right
+    place (and also convert its encoding that was broken by a BTS bug)
+  * Activate Danish translation of manpages by adding the needed addenda
+    Closes: #664901
+  
+  [ Programs translations ]
+  * Danish (Joe Dalton). Closes: #683191
+  * Fix typo in the french translation of debconf-show(1)
+    LP: #1025045    
+  * Polish (Marcin Owsiany). Closes: #683207
+  * Japanese (Kenshi Muto). Closes: #683223
+  * Bengali PO file header fixed
+  * Esperanto updated (Felipe Castro).
+  * Indonesian updated (Andika Triwidada).
+  * Simplified Chinese updated (Xingyou Chen).
+  * Bulgarian updated (Damyan Ivanov). Closes: #683245
+  * Russian (Yuri Kozlov). Closes: #683306
+  * Slovak (Ivan Masár). Closes: #683341
+  * French (Steve Petruzzello).
+  * Basque (Iñaki Larrañaga Murgoitio). Closes: #683527
+  * Czech (Miroslav Kure). Closes: #683548
+  * Thai (Theppitak Karoonboonyanan). Closes: #683585
+  * Portuguese (Miguel Figueiredo). Closes: #683615
+  * Finnish (Tommi Vainikainen). Closes: #683967
+  * Catalan (Jordi Mallach).
+  * Vietnamese (Nguyễn Vũ Hưng).
+  * Arabic (Ossama Khayat).
+  * Hebrew (Lior Kaplan).
+
+  [ David Prévot ]
+  * Make sure to keep the previous strings while updating PO files.
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 13 Aug 2012 13:17:14 +0100
+
 debconf (1.5.45) unstable; urgency=low
 
   [ Programs translations ]
