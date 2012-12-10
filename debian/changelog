@@ -1,3 +1,28 @@
+debconf (1.5.48) unstable; urgency=low
+
+  * dpkg-reconfigure: Fix incorrect scoping of control_path that broke
+    handling of multiple packages (closes: #690755, LP: #1076322).
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 10 Dec 2012 13:31:38 +0000
+
+debconf (1.5.47) unstable; urgency=low
+
+  [ Manpages translations ]
+  * German updated.
+
+  [ Joey Hess ]
+  * GTK frontend: Do additional probing in child process to catch cases
+    where trying to use GTK will cause an otherwise uncatchable crash.
+    Closes: #690776 Thanks, James Hunt
+  * debconf-devel.7: Mention that CAPB capabilities are separated with spaces.
+    Closes: #694626
+
+  [ Colin Watson ]
+  * dpkg-reconfigure: Fix trigger processing to cope properly if some of the
+    triggered packages use debconf (closes: #686071).
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 10 Dec 2012 13:18:46 +0000
+
 debconf (1.5.46) unstable; urgency=low
 
   [ Manpages translations ]
