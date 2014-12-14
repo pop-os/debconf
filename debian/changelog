@@ -1,3 +1,26 @@
+debconf (1.5.55) unstable; urgency=low
+
+  * Team upload
+
+  [ Programs translations ]
+  * Dutch updated. Closes: #771731
+  * Spanish updated. Closes: #771847
+  * Indonesian updated
+  * Catalan updated
+  * Japanese updated. Closes: #771886
+  * Basque updated. Closes: #771899
+  * Romanian updated. Closes: #772065
+  * Bulgarian updated. Closes: #772077
+  * Polish updated
+  * Swedish updated
+  * Esperanto updated
+  * Portuguese updated. Closes: #772582
+  * Turkish updated. Closes: #772813
+  * Brazilian Portuguese updated. Closes: #773076
+  * Thai updated. Closes: #772967
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 14 Dec 2014 08:43:06 +0100
+
 debconf (1.5.54) unstable; urgency=medium
 
   * Team upload
