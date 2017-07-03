@@ -1,3 +1,18 @@
+debconf (1.5.62) unstable; urgency=medium
+
+  * Upgrade to debhelper v9 and dh-exec.
+  * Make debconf provide python-debconf and python3-debconf, in preparation
+    for splitting those out to separate binary packages (see #709198).
+  * dpkg-preconfigure: Don't write "Extracting templates from packages:"
+    progress output if stderr is not a terminal (closes: #701818).
+  * Change directory to / before executing maintainer scripts (closes:
+    #608648).
+  * Install to $Config{vendorlib} rather than hardcoding /usr/share/perl5.
+  * Upgrade to copyright-format 1.0.
+  * Policy version 4.0.0.
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 03 Jul 2017 06:38:14 +0100
+
 debconf (1.5.61) unstable; urgency=medium
 
   [ Niko Tyni ]
