@@ -1,3 +1,17 @@
+debconf (1.5.63) unstable; urgency=medium
+
+  * "Change directory to / before executing maintainer scripts" from 1.5.62
+    was too intrusive due to changing Debconf::ConfModule, and broke some
+    existing maintainer scripts that e.g. ran ucf with relative paths.
+    Instead, just chdir to / before running maintainer scripts in
+    dpkg-reconfigure and chdir back afterwards (closes: #608648).
+  * In the Gnome frontend, hide the cancel button, and prompt for
+    confirmation when the close button is pressed (closes: #501767).
+    Original idea by Michael Vogt with an amendment by Joey Hess; some code
+    by Martin Pitt.
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 12 Jul 2017 02:23:47 +0100
+
 debconf (1.5.62) unstable; urgency=medium
 
   * Upgrade to debhelper v9 and dh-exec.
