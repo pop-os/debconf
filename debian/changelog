@@ -1,3 +1,21 @@
+debconf (1.5.64) unstable; urgency=medium
+
+  [ Colin Watson ]
+  * Split debconf.py out to new python-debconf and python3-debconf binary
+    packages (closes: #709198).
+  * debconf.py: Allow the Debconf class to be used as a context manager
+    (closes: #877096).
+  * Simplify creation of documentation directory symlinks using
+    "dh_installdocs --link-doc".
+
+  [ Programs translations ]
+  * German (Helge Kreutzmann).
+
+  [ Debconf translations ]
+  * Albanian (Eva Vranici).
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 15 Oct 2017 11:52:50 +0100
+
 debconf (1.5.63) unstable; urgency=medium
 
   * "Change directory to / before executing maintainer scripts" from 1.5.62
