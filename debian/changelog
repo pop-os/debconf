@@ -1,3 +1,15 @@
+debconf (1.5.66) unstable; urgency=medium
+
+  [ Programs translations ]
+  * French (Baptiste Jammet; closes: #887754).
+
+  [ Colin Watson ]
+  * Move VCS to salsa.debian.org.
+  * Mark debconf-doc Multi-Arch: foreign.
+  * Port the Gnome frontend to GTK+ 3 (closes: #883442, LP: #1736618).
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 28 Feb 2018 09:50:20 +0000
+
 debconf (1.5.65) unstable; urgency=medium
 
   * Declare Breaks on update-notifier-common (<< 3.187~) for the move of
