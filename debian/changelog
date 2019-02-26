@@ -1,3 +1,10 @@
+debconf (1.5.71) unstable; urgency=medium
+
+  [ Kevin Locke ]
+  * Dialog: Fix whiptail ellipsized selections (closes: #922279).
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 26 Feb 2019 09:30:35 +0000
+
 debconf (1.5.70) unstable; urgency=medium
 
   [ Colin Watson ]
